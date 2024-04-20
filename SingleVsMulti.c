@@ -11,6 +11,17 @@ int main()
     long a = 1;
     long b = 2;
 
+    /*
+        To run this program as single threaded, comment out the below multi-threaded code and run this
+
+        void *compute ((void *)&a);
+        void *compute ((void *)&b);
+
+        //To check the total time taken
+        // 1-> gcc -o single SingleVsMulti.c
+        // 2-> time ./single
+    */
+
     pthread_create(&t1, NULL, compute, (void *) &a);
     pthread_create(&t2, NULL, compute, (void *) &b);
 
